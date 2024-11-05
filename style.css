@@ -1,0 +1,494 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+/* General body styling */
+body{
+    margin: 0;
+    padding: 35px;
+    box-sizing: border-box;
+}
+
+/* Default paragraph styling */
+p{
+    margin: 0px;
+}
+
+/* Button styling to remove outlines and borders */
+button{
+    outline: none;
+    border: none;
+}
+
+/* Styling for input range elements (e.g., volume, progress bars) */
+input[type="range"]{
+    accent-color: #ce036a;
+}
+
+/* Main music player container layout */
+.music-player{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: max-content;
+    column-gap: 20px;
+}
+
+/* Left section for track list */
+.left-section{
+    background-color: #f3f3f3;
+    border-radius: 21px;
+    flex-grow: 1;
+    padding: 40px 30px 40px 50px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+}
+
+/* Container for the logo */
+
+
+/* Container for each song in the list */
+.item-container{
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+    padding: 6px;
+}
+
+/* Styling for the song thumbnail (small icon) */
+.item-img{
+    display: flex;
+    flex-grow: 0;
+}
+
+/* Container for song title and artist */
+.track-data-container{
+    flex-grow: 1;
+}
+
+/* Song title styling */
+.track-title{
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 15.47px;
+    text-align: left;
+}
+
+/* Artist name styling */
+.track-artist{
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 13.26px;
+    text-align: left;
+}
+
+/* Duration display styling */
+.track-duration{
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 15.47px;
+    text-align: left;
+}
+
+/* Year display styling */
+.track-year{
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 13.26px;
+    text-align: left;
+}
+
+/* Player controls section on the right */
+.player-container{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 21px;
+    background-color: #f3f3f3;
+    box-sizing: border-box;
+}
+
+/* Styling for the large thumbnail container (e.g., album art) */
+.thumbnail-container{
+    width:420px;
+    height: 489px;
+    border-radius: 21px;
+    background: linear-gradient(0deg, #d9d9d9 0%, #d9d9d9 100%, #fff);
+}
+
+/* Song details section (title and artist) */
+.track-details{
+    margin-top: 30px;
+    text-align: center;
+    row-gap: 5px;
+}
+
+/* Song title and artist display styling */
+#song-title, #song-artist{
+    color: #333333;
+    font-family: "Poppins";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 111.5%;
+}
+
+/* Specific artist name color */
+#song-artist{
+    color: #4F4F4F;
+    font-weight: 400;
+}
+
+/* Thumbnail image styling */
+#thumbnail{
+    max-width: 100%;
+    height: 100%;
+}
+
+/* Controls for playback and progress */
+.controls{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: fit-content;
+    width:100%;
+}
+
+/* Progress bar styling */
+.track-progress{
+    position: relative;
+    width: 397px;
+    margin-bottom: 48px;
+}
+
+/* Progress bar slider positioning */
+#progress{
+    position: absolute;
+    top: 16px;
+}
+
+/* Time indicators (e.g., elapsed time and time remaining) */
+.time{
+    color: #828282;
+    font-family: "Poppins";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 111.5%;
+    font-style: normal;
+}
+
+/* Positioning for the time left label */
+#time-left{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* Range inputs for sliders (progress, volume) */
+input[type="range"]{
+    height: 10px; /* Adjust as necessary */
+    width: 100%;
+    cursor: pointer;
+    margin: 8px 0;
+}
+button, input[type="range"] {
+    pointer-events: auto;
+}
+/* Group of buttons (play, pause, etc.) */
+.btn-group{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+/* General control button styling (e.g., play, pause, stop) */
+.control-button{
+    width: 44px;
+    height: 44px;
+    border-radius: 100%;
+    background-color: #ce036a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    }
+
+
+/* Styling for the play/pause button */
+#play-pause{
+    margin: 0 50px;
+}
+
+/* Container for volume control elements */
+.volume-container{
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    justify-content: space-between;
+}
+
+/* Volume range slider styling */
+.volume-range{
+    width: 310px !important;
+}
+
+/* Highlight the current playing song */
+/* Highlight the currently playing song in the list */
+.current-song{
+    color: #ce036a;
+}
+
+
+.btn-group > button{
+display: flex;
+cursor: pointer;
+}
+.next-prev-btn{
+    padding-top: 16px;
+}
+
+.player-bottom-controls{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.custom-dropdown-container{
+    position: relative;
+    display:inline-block;
+    width:188px;
+}
+.custom-dropdown-selected{
+    border-radius:50px;
+    background-color:#ECE4F9;
+    cursor: pointer;
+     padding: 16px;
+     display: flex;
+     align-items: center;
+     gap:8px;
+}
+.custom-dropdown-items{
+background-color: #f9f9f9;
+position: absolute;
+border-radius:4px;
+z-index:1;
+bottom: 62px;
+width:100%;
+display:none;
+
+}
+.custom-dropdown-item{
+    cursor: pointer;
+    color: #000000;
+    padding: 10px;
+    font-family: Poppins;
+    font-family: 14px;
+    font-weight: 500;
+    line-height: 15.47px;
+    text-align: left;
+}
+.custom-dropdown-item:hover{
+    background-color: #ddd;
+}
+.selected-speed{
+    color:#ce0368;
+}
+.list-thumbnail{
+    width:42px;
+    height: 42px;
+    border-radius:4px;
+    padding:0px 6px;
+}
+/* modal css */
+/* Add this style for the modal */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    width: fit-content;
+    width: 656px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+   .modal-image-container { 
+     position: relative; 
+
+  } 
+  .verfied-bedge{
+    position: relative;
+    bottom: 62px;
+    left: 35px;
+    color: #fff;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+  }
+  
+  #preview-artist {
+    position: absolute;
+    bottom: 15px;
+    left: 35px;
+    color: var(--Texto---Escuro, #f6f6f6);
+    font-family: Poppins;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  #preview-image {
+    width: 100%;
+    object-fit: cover;
+    height: 222px;
+  }
+  
+  .close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  
+  /* Additional styling for the preview details */
+  #previewDetails {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 24px;
+    padding: 24px;
+  }
+  
+  .verfied-bedge {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    position: relative;
+    bottom:72px;
+  }
+  
+  #previewTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  #previewDescription {
+    font-size: 16px;
+  }
+
+  
+  #preview-description {
+    color: #000001;
+    font-family: "Poppins";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+  }
+  
+
+  /* Mobile view adjustments */
+@media (max-width: 480px) {
+    /* Main music player container */
+    .music-player {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    /* Adjust left section for track list */
+    .left-section {
+        padding: 20px;
+        row-gap: 20px;
+    }
+
+    /* Player controls section on the right */
+    .player-container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* Adjust the album thumbnail for mobile */
+    .thumbnail-container {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+        max-height: 350px;
+    }
+
+    /* Progress bar for mobile */
+    .track-progress {
+        width: 90%;
+        margin: 0 auto 24px;
+    }
+
+    /* Song details */
+    #song-title, #song-artist {
+        font-size: 16px;
+    }
+
+    /* Adjust button sizes for mobile */
+    .control-button {
+        width: 36px;
+        height: 36px;
+        margin: 0 10px;
+    }
+
+    /* Volume control adjustments */
+    .volume-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .volume-range {
+        width: 90%;
+    }
+
+    /* Modal content for mobile */
+    .modal-content {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    /* Modal image adjustments */
+    #preview-image {
+        height: auto;
+        max-height: 180px;
+    }
+
+    /* Dropdown adjustments */
+    .custom-dropdown-container {
+        width: 100%;
+    }
+
+    .custom-dropdown-selected {
+        padding: 12px;
+    }
+
+    .custom-dropdown-items {
+        width: 100%;
+    }
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player level2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 style="color:rgb(185, 22, 90);text-align: center;">Akhila's Music Player</h1>
+    <!-- Primary wrapper of the music player -->
+    <div class="music-player">
+        
+        <!-- Left section for the song listing -->
+        <section class="left-section">
+
+            <!-- Container for track listing -->
+            <div class="song-list-container">
+                <h2>Track List</h2>
+                <div id="song-list">
+                    <!-- Track item list -->
+                    <div class="item-list-container">
+                        <!-- Icon representation -->
+                        <div class="item-img">
+                            <img src="/icons/outline.svg" alt="icon">
+                        </div>
+
+                        <!-- Track information: song title and artist -->
+                        <div class="item-track-data">
+                            <p></p>
+                            <p></p>
+                        </div>
+
+                        <!-- Track length and release year -->
+                        <div class="item-track-duration">
+                            <p></p>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Right section for playback controls -->
+        <section class="player-container">
+            <!-- Image placeholder for album art -->
+            <div class="thumbnail-container" id="thumbnail-container">
+                <img src="" alt="thumbnail" id="thumbnail">
+            </div>
+
+            <!-- Track information -->
+            <div class="track-details">
+                <!-- Song title and artist description -->
+                <p id="player-title"></p>
+                <p id="player-description"></p>
+            </div>
+            
+            <!-- Playback controls -->
+            <div class="controls">
+                <!-- Track progress bar -->
+                <div class="track-progress">
+                    <input type="range" id="progress" min="0" max="100" value="0" step="1">
+                    <div class="time" id="current-time">00:00</div>
+                    <div class="time" id="time-left">00:00</div>
+                </div>
+                <!-- Control buttons group -->
+                <div class="btn-group">
+                    <button class="shuffle" id="shuffle">
+                        <img src="icons/shuffle-highlighted.svg" id="shuffle-img">
+                    </button>
+                    <button class="nxt-prev-btn" id="prev">
+                        <img src="icons/prev.svg">
+                    </button>
+                    <button id="play-pause">
+                        <img src="icons/play-button.svg">
+                    </button>
+                    <button class="nxt-prev-btn" id="next">
+                        <img src="icons/next.svg">
+                    </button>
+                    <button class="repeat" id="repeat">
+                        <img src="icons/loop.svg" id="repeat-img">
+                    </button>
+                </div>
+                
+                
+                <!-- Sound control -->
+                 <div class="player-bottom-controls">
+                 <div class="volume-container">
+
+                    <img src="icons/volume-low.svg">
+                    <input type="range" id="volume" min="0" max="1" step="0.1" value="1" class="volume-range">
+                    <!-- 0 is mute and 1 is full volume -->
+                    <img src="icons/volume-high.svg">
+                    </div>
+                    <!-- play back speed container -->
+                     <div class="custom-dropdown-container" id="custom-dropdown">
+                       <!-- headphone image, playback name,arrow image -->
+                        <div class="custom-dropdown-selected" id="selectedValue">
+                         <!--playback speed  -->
+                        <img src="./icons/headphone.svg" alt="headphone">
+                      Playback Speed
+                      <img src="./icons/arrow.svg" alt="arrow" id="dropdown-arrow"/>
+                    </div>
+                    <!-- all speeds -->
+                     <div class="custom-dropdown-items" id="dropdown-list-items">
+                        <div class="custom-dropdown-item" data-value="2">2x</div>
+                        <div class="custom-dropdown-item" data-value="1.5">1.5x</div>
+                        <div class="custom-dropdown-item" data-value="1.25">1.25x</div>
+                        <div class="custom-dropdown-item selected-speed" data-value="1">Normal
+                        </div>
+                        </div>
+
+                     </div>
+                </div>
+                </div>
+            </div>
+        </section>
+    </div>
+   <!--preview modal  -->
+   <div id="preview-modal" class="modal">
+   <div class="modal-content">
+    <div class="modal-image-container">
+        <span class="close" id="close-modal"><img src="./icons/close.svg"/></span>
+        <img id="preview-image" src="" alt="preview image">
+        <p class="verfied-bedge" id="verified"><img src="./icons/verified.svg">Verified Artist</p>
+        <p id="preview-artist">Artist</p>
+    </div>
+    <div id="previewDetails">
+        <div class="preview-stats">
+        </div>
+        <p id="preview-description"></p>
+    </div>
+   </div>
+   </div>
+<script src="script.js"></script>
+</body>
+</html>
